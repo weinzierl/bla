@@ -1,0 +1,170 @@
+/* Copyright L. Weinzierl, 2021
+** Version: SID (based on Version 0.3)
+
+*/
+
+
+/* B A S I C   S T Y L I N G */
+/*****************************/
+
+body {
+  font-family: "DejaVu LGC Sans", "DejaVu Sans", "Bitstream Vera Sans", Verdana, Geneva, sans-serif;
+  background: #fff;
+  color: #999;
+  margin: 0;
+}
+
+h1 {
+  font-size: 1.44em;
+  font-weight: bold;
+  border: solid 0px;
+  padding-bottom: 0.3em;
+  margin: 0;
+  color: #999;
+  background: inherit;
+  padding-bottom: 0.05em;
+}
+
+h2 {
+  font-size: 1.2em;
+  font-weight: bold;
+  border: solid 0px;
+  padding-top: 0.8em;
+  padding-bottom: 0.3em;
+  margin: 0;
+  color: #999;
+  background: inherit;
+ 
+}
+
+p, #Content p {
+  font-weight: normal;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 1em;
+}
+
+ul {
+  line-height: 1.5em;
+  list-style-type: none;
+  margin: .3em 0 0 1.5em;
+  padding: 0;
+}
+
+ol {
+  line-height: 1.5em;
+  margin: .3em 0 0 3.2em;
+  padding: 0;
+  list-style-image: none;
+}
+
+li {
+  margin-bottom: .1em;
+}
+
+/* C L E A R   C L A S S */
+/*************************/
+
+.visualClear {
+  clear: both;
+}
+
+/* H E A D E R */
+/***************/
+
+#Header, #Footer {
+  width: 80%;
+  height: 4em;
+  background: #fff;
+  color: #999;
+  text-decoration: none;
+  margin: 1em;
+}
+
+#Logo {
+  font-size: small;
+  display: inline;
+  float: left;
+  position: relative;
+  left: 1em;
+  z-indes: 99;
+}
+
+
+#Logo li {
+  list-style: none;
+  background: #499cd1;
+  margin: 0;
+  padding: 0;
+  width: 2em;
+  height: 2em;
+  position: absolute;
+}
+
+#Logo .box1 {left:0;   top:0;}
+#Logo .box2 {left:2em; top:2em;}
+#Logo .box3 {left:4em; top:0;}
+#Logo .box4 {left:6em; top:2em;}
+#Logo .box5 {left:8em; top:0;}
+
+#Logo a, #Logo a:visited, #Logo a:hover, #Logo a:visited:hover {
+  outline: none;
+  color: #499cd1;
+}
+
+#Logo span {
+  font-size: xx-large;
+  position: absolute;
+  left: 5em;
+}
+
+
+
+
+
+/* F O O T E R */
+/***************/
+
+
+#Footer {
+  height: 2em;
+}
+
+#Footer p {
+  padding-left: 1em;
+  padding-right: 1em;
+  width: 25em;
+  display: inline;
+  margin-top: 0.3em;
+}
+
+#Footer p.created {
+  float: left;
+}
+
+#Footer p.modified {
+  float: right;
+  text-align: right;
+}
+
+/* C O N T E N T */
+/*****************/
+
+
+#Content {
+  float: left;
+  margin-left: 0%;
+  width: 60%;
+  padding: 2em;
+}
+
+a:link {
+  color: #499cd1;
+  text-decoration: none;
+}
+
+a:visited {
+  color: #d46b6e;
+}
+

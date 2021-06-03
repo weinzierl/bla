@@ -1,0 +1,610 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8">
+    <title>Femap FAQ</title>
+    <meta name="description" content="FEMAP ist eine finite Elemente Modellierungssoftware. Hier sind Fragen und Antworten, gesammelt in den 6 Jahren, die ich mit FEMAP gearbeitet habe.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <link rel="stylesheet" href="../css/bossanova.css">
+    <link rel="canonical" href="https://weinzierlweb.com/femapfaq">
+    <link rel="" href="">
+
+
+    <meta name="" content="">
+
+    <!--script src="https://weinzierlweb.com/js/weinzierlweb.js" integrity=""-->
+
+    <!-- Extra Meta Data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "url": "https://weinzierlweb.com",
+        "logo": "https://img.weinzierlweb.com/logo.gif"
+      }
+    </script>
+
+
+    <meta property="og:title" content="Femap FAQ" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://weinzierlweb.com/femapfaq" />
+    <meta property="og:image" content="https://weinzierlweb.com/android-chrome-192x192.png" />
+
+
+    <meta property="twitter:card" content="summary" />
+    <meta property="twitter:creator" content="@weinzierl" />
+    <meta property="twitter:site" content="@weinzierl" />
+
+
+    <!-- favicon -->
+
+    <!-- START Retyped from what realfavicongenerator.net generated START -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="194x194" href="/favicon-194x194.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#479dd2">
+    <meta name="apple-mobile-web-app-title" content="weinzierlweb">
+    <meta name="application-name" content="weinzierlweb">
+    <meta name="msapplication-TileColor" content="#479dd2">
+    <meta name="msapplication-TileImage" content="/mstile-144x144.png">
+    <meta name="theme-color" content="#479dd2">
+    <!-- END Retyped from what realfavicongenerator.net generated END -->
+
+
+  </head>
+  <body>
+    <div id="NotificationBar"></div>
+    <div id="Header" class="visualClear">
+      <a href="/" id="Logo">
+        <ul>
+          <li class="box1"></li>
+          <li class="box2"></li>
+          <li class="box3"></li>
+          <li class="box4"></li>
+          <li class="box5"></li>
+        </ul>
+        <span> weinzierlweb</span>
+      </a>
+    </div>
+    <div id="Content">
+      <div class="bodyText">
+      <h1>Femap FAQ</h1>
+
+Diese Seite ist auch auf Englisch verfügbar <a href="/femapfaq">Femap FAQ</a>.
+
+
+<h4><a href="#q01">Was bedeutet "Preprozessor control Validation failed."?</a></h4>
+<h4><a href="#q02">Was bedeutet "Error Code 9002"?</a></h4>
+<h4><a href="#q03">Wie kann ich mir bei Plattenelementen die minimal und maximal Werte von Vorder- und Rückseite kombiniert anzeigen lassen?</a></h4>
+<h4><a href="#q04">Was bedeutet "Preprozessor control Validation failed."?</a></h4>
+<h4><a href="#q05">Was wird bei XY-Diagrammen auf der X-Achse aufgetragen?</a></h4>
+<h4><a href="#q06">Für was sind die einzelnen Funktionstypen gut?</a></h4>
+<h4><a href="#q07">Welche Entities gibt es überhaupt?</a></h4>
+<h4><a href="#q08">Wo finde ich mehr zu Funktionen wie XEL() oder SIN()?</a></h4>
+<h4><a href="#q09">Wie kann man die Hintergrundfarbe eines Fensters ändern?</a></h4>
+<h4><a href="#q10">Die Titelleiste meines Fensters ist verschwunden, wie bekomme ich sie wieder?</a></h4>
+<h4><a href="#q11">Die kleinen Fenster, die angezeigt werden, wenn man den Mauszeiger eine Weile auf einem Knoten oder Element läßt (Dynamic Query), verschwinden nicht wieder. Wie werde ich sie wieder los?</a></h4>
+<h4><a href="#q12">Wie kann ich schnell Informationen über ein bestimmtes Element oder einen Knoten gewinnen?</a></h4>
+<h4><a href="#q13">Welche Karten werden für die Einstellungen in den verschiedenen Dialogen in Femap in denen man Temperturen einstellen kann produziert?</a></h4>
+<h4><a href="#q14">Was kostet Femap?</a></h4>
+<h4><a href="#q17">Mein View wird nicht angezeigt, obwohl er aktiviert ist?</a></h4>
+<h4><a href="#q18">Wie aktiviert man das Schreiben von f06, *.xdb oder *.op2 files?</a></h4>
+<h4><a href="#q19">Wie stellt man die Materialausrichtung ein?</a></h4>
+<h4><a href="#q20">Check Coincident Elements findet koinzidente Elemente nicht?</a></h4>
+<h4><a href="#q21">Was macht MAXRATIO und BAILOUT?</a></h4>
+<h4><a href="#q22">Wie kann ich das Koordinatensystem das Dynamic Query (Tooltip) anzeigt ändern?</a></h4>
+<h4><a href="#q23">Wie erzeugt man Bilder für Word?</a></h4>
+<h4><a href="#q24">Wie muß eine CSV Datei für Femap aussehen?</a></h4>
+<h4><a href="#q25">Wie erzeugt man RBE2 und RBE3 Elemente?</a></h4>
+<h4><a href="#q26">Meine Laminate sind zu dünn.</a></h4>
+<h4><a href="#q27">Ich bräuchte einen Knoten mit zwei unterschiedlichen Output Koordinatensystemen.</a></h4>
+<h4><a href="#q28">Wenn ich mein Modell verformt anzeige, ist die Verformung genau in die "falsche" Richtung.</a></h4>
+<h4><a href="#q29">Wie bringe ich NASTRAN dazu die verwendeten MAT Karten anzuzeigen.</a></h4>
+<h4><a href="#q30">Kann ich Platten einen Temperaturgradienten zwischen Vorder- und Rückseite aufzwingen.</a></h4>
+<h4><a href="#q31">Wie kann ich Temperaturgradienten aufbringen?</a></h4>
+
+
+
+
+
+
+Es wurden Sonderzeichen in Femap verwendet.
+Bei der Berechnung der Prüfsumme werden Sonderzeichen von Femap und
+NASTRAN unterschiedlich behandelt.
+Dies gilt auch für Entitynamen (z.B. Namen von Properties), denn diese
+werden als Kommaentare in das DAT-File geschrieben, und Kommentare
+werden in die Berechnug der Prüfsumme mit einbezogen.
+
+<h4><a id="q02">Was bedeutet "Error Code 9002"?</a></h4>
+
+Es sind Leerzeichen im Modelldateinamen,
+oder es sind Leerzeichen im Pfad zum Modell,
+oder es sind Leerzeichen im Pfad zu Femap.
+Sonderzeichen wie ä sind auch im ganzen Pfad einschließlich Dateinamen
+verboten.
+
+<h4><a id="q03">Wie kann ich mir bei Plattenelementen die minimal und maximal Werte von Vorder- und Rückseite kombiniert anzeigen lassen?</a></h4>
+
+Bei Model/Output/Envelope als From Output Set, entsprechende Output Set
+wählen.
+Als Vektoren Plate Top und Plate Bot angeben.
+Ein neues Output Set mit den Extremwerten wird generiert.
+
+<h4><a id="q01">Wie kann ich mit bei Laminaten die minimal und maximal Werte über alle Lagen anzeigen lassen?</a></h4>
+
+siehe <a href="#q03">"Wie kann ich mir bei Plattenelementen die minimal und maximal Werte von Vorder- und Rückseite kombiniert anzeigen lassen?"</a>
+
+<h4><a id="q05">Was wird bei XY-Diagrammen auf der X-Achse aufgetragen?</a></h4>
+
+Unter View/Select sind folgende Möglichkeiten einstellbar:<br>
+Option X-Achse<br>
+====== =======<br>
+XY vs ID ID<br>
+XY vs Set Output Set ID<br>
+XY vs Set Value Output Set Name, der als Wert interpretiert wird (z.B. für <br> Eigenfrequenzen).<br>
+XY vs Position Position entlang einer der Achsen<br>
+XY vs Function Wert<br>
+
+
+<h4><a id="q06">Für was sind die einzelnen Funktionstypen gut?</a></h4>
+
+Funktionstypen und deren Verwendung<br>
+Allgemein<br>
+=========<br>
+1. Dimensionless<br>
+16.Function vs. Value multiple curves associated with a given quantity<br>
+<br>
+Dynamic<br>
+=======<br>
+2. vs. Time time dependent loads for transient analysis<br>
+4. vs. Frequency frequency dependent loads for frequency response analysis.<br>
+7.Viscous Damping vs. Frequency damping for transient/frequency response analysis<br>
+8. Critical Damping vs. Frequency damping for transient/frequency response analysis<br>
+9.Amplification vs. Frequency damping for transient/frequency response analysis<br>
+17. Function vs. Critical Damping tables obtained for/from Response Spectrum analysis<br>
+<br>
+Nonlinear<br>
+========<br>
+3. vs. Temperature temperature dependent material properties<br>
+5. vs. Stress stress dependent curves for nonlinear material properties<br>
+6. Function vs. Temperature multiple stress/strain curves as a function of strain rate for nonlinear material properties<br>
+10.vs. Strain Rate yield stress as function of strain rate for nonlinear material properties<br>
+11. Function vs. Strain Rate multiple stress/strain curves as a function of strain rate for nonlinear material properties<br>
+14. Stress vs. Strain stress/strain curve for nonlinear material properties<br>
+15. Stress vs. Plastic Strain stress/strain curve for nonlinear material properties for export to those analysis codes that require input in plastic strain.<br>
+12. vs. Curve Length define load magnitude as a function of curve length.<br>
+13. vs. Parametric Length define load magnitude as a function of parametric length.<br>
+
+
+
+<h4><a id="q07">Welche Entities gibt es überhaupt?</a></h4>
+
+
+<ol>
+    <li>Coordinate System</li>
+    <li>Point</li>
+    <li>Curve</li>
+    <li>Surface</li>
+    <li>Solid/Volume</li>
+    <li>Text</li>
+    <li>Boundary</li>
+    <li>Node</li>
+    <li>Element</li>
+    <li>Material</li>
+    <li>Property</li>
+    <li>Load Set</li>
+    <li>Constraint Set</li>
+    <li>View</li>
+    <li>Output Set</li>
+    <li>Output Format</li>
+</ol>
+
+
+<h4><a id="q08">Wo finde ich mehr zu Funktionen wie XEL() oder SIN()?</a></h4>
+
+Appendix C im User Giude enthält eine Function Reference.
+
+<h4><a id="q09">Wie kann man die Hintergrundfarbe eines Fensters ändern?</a></h4>
+
+Mit Klick der rechten Maustaste auf der Fenstertitelleiste, kann man die
+Fenstereigenschaften wie z.B. Hintergrundfarbe ändern.
+
+<h4><a id="q10">Die Titelleiste meines Fensters ist verschwunden, wie bekomme ich sie wieder?</a></h4>
+
+Shift und rechte Maustaste blendet Fenster Titelleiste aus und wieder
+ein.
+
+<h4><a id="q11">Die kleinen Fenster, die angezeigt werden, wenn man den Mauszeiger eine
+Weile auf einem Knoten oder Element läßt (Dynamic Query), verschwinden
+nicht wieder. Wie werde ich sie wieder los?</a></h4>
+
+<pre>Delete/Tools/Text</pre>
+
+und alle kleinen Fenster, die gelöscht werden sollen markieren und löchen.
+Siehe auch:
+<a href="#q12">"Wie kann ich schnell Informationen über ein bestimmtes Element oder einen Knoten gewinnen?"</a>
+
+<h4><a id="q12">Wie kann ich schnell Informationen über ein bestimmtes Element oder einen Knoten gewinnen?</a></h4>
+
+In der Statuszeile ganz rechts anzuzeigende Entity auswählen.
+Mit der Maus auf des gewünschte Element oder den gewünschten Knoten
+fahren, und dort kurz bleiben.
+Es wird ein kleines Fenster mit Informationen angezeigt.
+Die angzeigten Informationen hängen vom eingestellten Output Set und Output Vektor ab.
+Diese Funktion heißt Dynamic Query.
+Weiter nützliche Funktionen sind: Dynamic Query + linke Maustaste kopiert Text in das List Window
+Dynamic Query + rechte Maustaste kopiert Text in das Graphik Window
+Um ihn anzuzeigen muß Text eingeschaltet und in der Gruppe sein,
+Außerdem muß Redraw gemacht werden.
+
+<h4><a id="q13">Welche Karten werden für die Einstellungen in den verschiedenen Dialogen in Femap in denen man Temperturen einstellen kann produziert?</a></h4>
+
+<pre>Model/Load Body/Default Temperature</pre>	TEMPD
+<pre>Model/Load/Body/Reference Temperature</pre>	wird nicht rausgeschrieben
+<pre>Model/Material/Reference Temperature</pre>	MAT1
+<pre>Model/Material/Functions/Reference Temperature</pre>	TABLEM2
+
+<h4><a id="q16">Wie ermittelt man ein Response Spectrum?</a></h4>
+<pre>
+DLOAD -> RLOAD1 oder RLOAD2
+RLOAD1 -> DAREA -> LSEQ -> LOAD
+METHOD Refid
+EIGRL Refid
+</pre>
+
+Karten die für Response Spectrum verwendet werden.
+<pre>
+LSEQ Loadset <-> DAREA
+RLOAD2 DAREA
+PLOAD4
+DLOAD skaliert RLOAD2
+TABLED1	TID	XAXIS	YAXIS	XY ... Loads
+TABDMP1	TID	TYPE	XY	XY ... Modal Damping
+LSEQ	SID	DAREA	LID
+RLOAD2	SID	DAREA	DELAY	DPHASE	TB
+PLOAD4	SID	EID	P1
+
+DLOAD
+FREQ	SID	F1
+FREQ3	SID	F1	F2	TYPE	NEF
+</pre>
+
+
+
+<h4><a id="q17">Mein View wird nicht angezeigt, obwohl er aktiviert ist?</a></h4>
+
+Femap Fenster minimieren, und wieder maximieren.
+Der View ist dann minimiert im Femap Fenster.
+
+<h4><a id="q18">Wie aktiviert man das Schreiben von f06, *.xdb oder *.op2 files?</a></h4>
+
+PARAM,POST,-1 aktiviert das Schreiben von *.op2 Dateien<br>
+PARAM,POST,0 aktiviert das Schreiben von *.xdb Dateien<br>
+PARAM,POST,1 aktiviert das Schreiben von *.f06 Dateien<br>
+<br>
+In der Case Control Section muß bei den Ausgabeanweisungen jeweils
+PRINT angegeben sein.<br>
+Zum Beispiel:<br>
+DISPLACEMENT(PRINT)=ALL<br>
+Im Dokument Result-Destination-Summary findet man eine Übersicht über
+die verschiedenen Möglichkeiten.<br>
+
+In Femap stellt man die Art der Ausgabe im NASTRAN Case Control Dialog
+ein.<br>
+Den Dialog erreicht man mit File/Export.../Advanced oder
+File/Analyze/Advanced und OK.<br>
+In neueren Femap Versionen auch unter Model/Analysis beim Bearbeiten des
+Analysis Set im Output Requests Dialog.<br>
+Zur Auswahl stehen:<br>
+Print Only: Die Ausgabe wird in die *.F06 Datei geschrieben.<br>
+PostProcess Only: Die Ausgabe wird in die *.OP2 Datei geschrieben.<br>
+Print and PostProcess: Die Ausgabe wird in die *.F06 und in die *.OP2
+Datei geschrieben.<br>
+Punch Only: Die Ausgabe wird in die *.PCH Datei geschrieben.<br>
+Punch and PostProcess: Die Ausgabe wird in die *.PCH und in die *.OP2
+Datei geschrieben.<br>
+
+
+<h4><a id="q19">Wie stellt man die Materialausrichtung ein?</a></h4>
+
+Für 2D-Elemente läßt sich die Materialausrichtung unter Porperty
+Type/Material Oriantation einstellen. Man kann die Ausrichtung durch die Knoten, durch einen Vektor, durch ein
+Koordinatensystem oder durch einen Winkel angeben.
+(Model/Property.../Elem/Property Type.../Element Material Orientation)
+(Modify/Update Elements/Material Angle...)<br>
+<br>
+Für Volumenelemente läßt sich bei der zugewiesenen Property ein
+Koordinatensystem angeben.
+(Model/Property.../Elem/Property Type.../Solid/OK/Material Axes)
+Das Koordinaten System muß vorher definiert worden sein.
+Alternativ kann man das Material an den durch die Knoten festgelegten
+Achsen definieren.<br>
+<br>
+Für Linien Elemente kann man eine Element Orientation festlegen.
+(Modify/Update Elements/Orientation...)<br>
+(Model/Element/Type.../Bar/OK/Orientation)<br>
+
+<h4><a id="q20">Check Coincident Elements findet koinzidente Elemente nicht?</a></h4>
+
+Wird während des Coinzident Element Checks mit der Maus geklickt,
+bricht der Check ab.
+Vorhandene koinzidente Elemente werden unter Umständen nicht gefunden.
+Ob man dabei in Femap klickt, oder in einer anderen Anwendung spielt
+keine Rolle.
+Daß der Check erfolgreich abgeschlossen wurde erkennt man daran, daß
+der Mauszeiger wieder die normale Form annimmt (was er allerdings auch
+tut, wenn man während des Checks klickt, und damit den Check vorzeitig
+abbricht).
+Wenn keine koinzidenten Elemente gefunden wurden, kann man das Ende des
+Checks auch an der Meldungen "No Coincident Elements Found." erkennen.
+
+
+<h4><a id="q21">Was macht MAXRATIO und BAILOUT?</a></h4>
+
+<pre>PARAM,MAXRATIO,</pre>
+
+Zahl bestimmt wie groß das Verhältnis von Matrix Diagonale zur Faktor
+Diagonale werden darf.<br>
+
+<pre>PARAM,MAXRATIO,1.E+8</pre>
+
+ist der Standardwert.<br>
+Wird der Wert von 
+
+<pre>MAXRATIO</pre>
+
+überschritten, hängt es vom Wert des Parameters 
+
+<pre>BAILOUT</pre>
+
+ab, was passiert.<br>
+
+Mit 
+
+<pre>PARAM,BAILOUT,0</pre>
+
+bricht NASTRAN beim Überschreiten den Rechenlauf ab.<br>
+Mit
+
+<pre>PARAM,BAILOUT,-1</pre>
+
+ignoriert NASTRAN das Überschreiten von
+
+<pre>MAXRATIO</pre><br>
+
+.
+
+<h4><a id="q22">Wie kann ich das Koordinatensystem das Dynamic Query (Tooltip) anzeigt ändern?</a></h4>
+
+Unter Tools Parameters kann man das aktive Koordinaten System unter Coord
+Sys umstellen.
+Dieses Korrdinatensystem wird dann auch für die Anzeige im Dynamic
+Query verwendet.
+
+<h4><a id="q23">Wie erzeugt man Bilder für Word?</a></h4>
+
+Bilder kann man für Word entweder als Bitmap oder als Vektorgrafik
+erzeugen.
+Beides hat Vor- und Nachteile.<br>
+So erzeugt man eine Bitmap-Grafik:<br><br>
+
+In Femap<br>
+
+<ol>
+    <li>Rendermode einschalten</li>
+    <li>Strg-C</li>
+</ol>
+
+
+In Word<br>
+
+<ol>
+    <li>Inhalte Einfügen</li>
+    <li>Als geräteunabhängige Bitmap</li>
+</ol>
+
+
+Leider läßt sich die Auflösung der Bitmap nicht einstellen.
+"File/Page Setup/Render Res Factor" zeigt leider nicht die gewünschte
+Wirkung.<br>
+
+So erzeugt man eine Vektor-Grafik:<br><br>
+
+In Femap<br>
+
+
+<ol>
+    <li>Rendermode ausschalten</li>
+    <li>Strg-C</li>
+</ol>
+
+
+In Word<br>
+
+<ol>
+    <li>Inhalte Einfügen</li>
+    <li>Als Bild einfügen</li>
+</ol>
+
+
+Leider werden dabei auch nicht sichtbare Polygone mit exportiert.
+Deshalb kann die Vektorgrafik sehr groß werden.
+
+
+
+<h4><a id="q24">Wie muß eine CSV Datei für Femap aussehen?</a></h4>
+
+Siehe CSV-Format.pdf
+
+<h4><a id="q25">Wie erzeugt man RBE2 und RBE3 Elemente?</a></h4>
+
+RBE Elemente heißen in Femap Rigid Elements.
+Ob ein RBE2 oder ein RBE3 erzeugt wird hängt davon ab ob ein
+Interpolation Faktor angegeben ist oder nicht.
+
+
+<ul>
+    <li>RBE2: rigid = kein Factor</li>
+    <li>RBE3: interpolation = mit Factor</li>
+</ul>
+
+
+Es gibt einen unabhängigen Knoten und mehrere abhängige.<br>
+<pre>
+     indy
+     /|\
+    / | \
+   /  |  \
+ dep dep dep
+</pre>
+Rigid elements are used to<br>
+
+<ul>
+    <li>model areas that are very stiff compared to the adjoining structure in order to prevent numerical difficulties and often to simplify the model</li>
+    <li>used to connect two coincident nodes that have different coordinate systems</li>
+</ul>
+
+<br>
+RBE 3 Spinne (z.B. für Schrauben)<br>
+<pre>
+123 123 123
+ \   |   /
+  \  |  /
+   \ | /
+   123456
+    /|\
+   / | \
+  /  |  \
+123 123 123
+</pre>
+<h4><a id="q26">Meine Laminate sind zu dünn.</a></h4>
+
+Sind sie nicht.
+Wenn man bei Define Property - LAMINATE Elements den Haken bei
+"Symmetric Layers" aktiviert,
+dann rechnet NASTRAN mit der doppelten Dicke der angegebenen Layer.
+Femap stellt jedoch nur die einfache dicke dar.
+
+
+
+<h4><a id="q27">Ich bräuchte einen Knoten mit zwei unterschiedlichen Output Koordinatensystemen.</a></h4>
+
+Ein Knoten kann nur ein Output-Koordinatensystem haben.
+Man kann zwei koinzidente Knoten mit unterschiedlichen
+Output-Koordinatensytemen erzeugen und diese mit einem RBE2 verbinden.
+Eine Verbindung mit einem RBE3 scheint zu funktionieren, ist aber in der
+Anleitung nicht klar ob unterschiedliche Output-Koordinatensysteme
+erlaubt sind.
+Bei CELAS müssen die beiden Endknoten im selben Koordinatensystem sein.
+
+
+<h4><a id="q28">Wenn ich mein Modell verformt anzeige, ist die Verformung genau in die "falsche" Richtung.</a></h4>
+
+Eine Anzeige mit einem Scale Faktor von -1 ist leider nicht möglich.
+Man kann allerdings ein Output Set oder einen Output Vektor mit -1
+multiplizieren und erhält ein neues Set oder einen neuen Vektor, den man dann plotten kann.
+Das geht folgendermassen:<br>
+Model/Output/Process/<br>
+Linear<br>
+Scale Factor -1.<br>
+From Output Set wählen<br>
+To Output Set wählen<br>
+Add Operation<br>
+Eine andere Möglichleit ist das Modell
+animiert darzustellen und im richtigen Augenblick
+einen Screenshot zu machen.
+Etwas seltsam, aber funktioniert.
+
+
+
+<h4><a id="q29">Wie bringe ich NASTRAN dazu die verwendeten MAT Karten anzuzeigen.</a></h4>
+
+MAT8 Karten (2d Orthotropic) werden von NASTRAN intern in MAT2 Karten
+umgewandelt.
+Es kann nützlich sein, diese MAT2 Karten z.B. für Platten mit
+Laminatverhalten zu verwenden.
+Dazu muß man NASTRAN dazu bewegen, die MAT2 Karten auszugeben.
+Die geschieht mit einem <br>
+
+<pre>
+NASTRAN PRTPCOMP=1
+</pre>
+
+Statement am Anfang der Bulk Datei.
+In Femap kann man das bei "Model/Anlysis/NASTRAN Executive und Solution
+Options" unter "Start Text" eingeben.
+Für aktuelle NASTRAN Versionen genügt das bereits,
+die MAT2 karten landen als INFORMATION MESSAGE im f06 File.
+Bei den NASTRAN Versionen die mit Femap geliefert werden funktioniert es
+nur wenn zusätzlich ECHO=PUNCH aktiv ist
+Model/Anlysis/Output Requests/Echo Model<br>
+
+<pre>
+ECHO=PUNCH
+</pre>
+
+Die MAT2 Karten stehen dann zusammen mit den zugehörigen PSHELL Karten
+im Punch (*.pch) File.
+
+
+
+
+<h4><a id="q30">Kann ich Platten einen Temperaturgradienten zwischen Vorder- und Rückseite aufzwingen.</a></h4>
+
+Aber ja, aber leider nicht mit Femap.
+Die betreffende NASTRAN Karte heißt TEMPP1.
+Sie läßt sich in Femap erzeugen,
+indem man einen Dummy-Temperaturlastfall anlegt.
+Man muß einem beliebigen Knoten eine Temperatur geben.
+Dann kann man unter "Model/Analysis/NASTRAN Bulk Data Options/Start
+Text" die Karte manuell eingeben.
+Zum Beispiel:
+
+<pre>
+$2345678 2345678 2345678 2345678 2345678 2345678
+TEMPP1         6       1     0.0     0.4
+               2    THRU    5000
+</pre>
+
+Achtung:
+FEMPAP verwendet in dem Fenster für die Text Eingabe eine
+Proportionalschriftart, was die händische Eingabe der Karte nahezu
+unmöglich macht.
+Besser ist es die Karte im Editor zu erzeugen und in das Textfenster
+hineinzukopieren.
+
+
+<h4><a id="q31">Wie kann ich Temperaturgradienten aufbringen?</a></h4>
+
+Model/Load/Nodal/Temperature Methode Variabel !!!! Temperatur in
+Abhängigkeit von der Koordinate
+(xnd(!i), ynd(!i), znd(!i)) als Gleichung
+eingeben.
+Wenn mann vergisst auf "Methode Variable" zu klicken funktioniert es
+nicht!
+
+
+
+
+
+      </div>
+    </div>
+    <div id="Footer" class="visualClear">
+      <p class="created">Created: 2004</p>
+      <p class="modified">Last Modified: 2021-03-28</p>
+      <a href="https://weinzierlweb.com/contact">Contact</a>&nbsp;&middot;&nbsp;<a href="https://weinzierlweb.com/privacy">Privacy</a>&nbsp;&middot;&nbsp;<a href="https://weinzierlweb.com/sitemap">Sitemap</a>&nbsp;&middot;&nbsp;<a href="https://secure-stats.pingdom.com/6xu4irqdlxkl">Status</a>&nbsp;&middot;&nbsp;<a href="https://weinzierlweb.com/key">PGP Key</a>&nbsp;&middot;&nbsp;<a href="https://weinzierlweb.com/now">Now</a>
+    </div>
+    <noscript>
+      <p>
+        <img src="https://s.weinzierlweb.com/m/matomo.php?idsite=1&rec=1&bots=0&action_name='femapfaq'" alt="This is just an empty image.">
+        <img src="/s.gif?nojs=y" alt="This is another empty image.">
+      </p>
+    </noscript>
+  </body>
+</html>
+

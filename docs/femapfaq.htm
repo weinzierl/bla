@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Femap FAQ (English)</title>
+    <meta name="description" content="FEMAP ist eine finite Elemente Modellierungssoftware. Hier sind Fragen und Antworten, gesammelt in den 6 Jahren, die ich mit FEMAP gearbeitet habe.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <link rel="stylesheet" href="css/bossanova.css">
+    <link rel="canonical" href="https://weinzierlweb.com/femapfaq">
+    <link rel="" href="">
+
+
+    <meta name="" content="">
+
+    <!--script src="https://weinzierlweb.com/js/weinzierlweb.js" integrity=""-->
+
+    <!-- Extra Meta Data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "url": "https://weinzierlweb.com",
+        "logo": "https://img.weinzierlweb.com/logo.gif"
+      }
+    </script>
+
+
+    <meta property="og:title" content="Femap FAQ (English)" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://weinzierlweb.com/femapfaq" />
+    <meta property="og:image" content="https://weinzierlweb.com/android-chrome-192x192.png" />
+
+
+    <meta property="twitter:card" content="summary" />
+    <meta property="twitter:creator" content="@weinzierl" />
+    <meta property="twitter:site" content="@weinzierl" />
+
+
+    <!-- favicon -->
+
+    <!-- START Retyped from what realfavicongenerator.net generated START -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="194x194" href="/favicon-194x194.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#479dd2">
+    <meta name="apple-mobile-web-app-title" content="weinzierlweb">
+    <meta name="application-name" content="weinzierlweb">
+    <meta name="msapplication-TileColor" content="#479dd2">
+    <meta name="msapplication-TileImage" content="/mstile-144x144.png">
+    <meta name="theme-color" content="#479dd2">
+    <!-- END Retyped from what realfavicongenerator.net generated END -->
+
+
+  </head>
+  <body>
+    <div id="NotificationBar"></div>
+    <div id="Header" class="visualClear">
+      <a href="/" id="Logo">
+        <ul>
+          <li class="box1"></li>
+          <li class="box2"></li>
+          <li class="box3"></li>
+          <li class="box4"></li>
+          <li class="box5"></li>
+        </ul>
+        <span> weinzierlweb</span>
+      </a>
+    </div>
+    <div id="Content">
+      <div class="bodyText">
+      <h1>Femap FAQ (English)</h1>
+
+This page is also available in German <a href="/femapfaq">Femap FAQ</a>.
+
+
+<a href="#q01"><h4>What does "Preprozessor control Validation failed." mean?</h4></a>
+<a href="#q02"><h4>What does "Error Code 9002" mean?</h4></a>
+<a href="#q03"><h4>How can I make FEMAP output the max and min values of front- and backside of plate lements combined?</h4></a>
+<a href="#q04"><h4>What does "Preprozessor control Validation failed."?</h4></a>
+<a href="#q05"><h4>What is shown on the X-axis of XY-diagrams?</h4></a>
+<a href="#q06"><h4>What are the different function types good for?</h4></a>
+<a href="#q07"><h4>What entities are theret?</h4></a>
+<a href="#q08"><h4>How can I find out more about functions like XEL() or SIN()?</h4></a>
+<a href="#q09"><h4>How can I change the background color of a window?</h4></a>
+<a href="#q10"><h4>The title bar of my window has disappeared. How can I get it back?</h4></a>
+<a href="#q11"><h4>The small Dynamic Query windows don't disappear. How can I get rid of them?</h4></a>
+<a href="#q12"><h4>How can I get information about a certain node or element quickly?</h4></a>
+
+
+
+
+
+
+<a id="q01"><h4>What does "Preprozessor control Validation failed." mean?</h4></a>
+The reason is most probably special characters in the input file.
+When the file checksum is calculated FEMAP and NASTRAN treat special characters differently, and this is where the error comes from.
+This also applies to entity names, because these are written as comments into the DAT file and comments are part of the checksum calculation.
+
+<h4><a id="q02">What does "Error Code 9002" mean?</a></h4>
+
+Spaces in the model name, spaces in the path to the model file, spaces in the path to FEMAP.
+Special characters, like äare also forbidden in path and file name.
+
+<h4><a id="q03">How can I make FEMAP output the max and min values of front- and backside of plate lements combined?</a></h4>
+
+In Model/Output/Envelope chose From Output Set, and select the appropriate Output Set.
+As Vector select Plate Top und Plate Bot. A new Output Set with min and max values will be generated.
+
+<h4><a id="q04">What does "Preprozessor control Validation failed."?</a></h4>
+
+see <a href="#q03">"How can I make FEMAP output the max and min values of front- and backside of plate lements combined?"</a>
+
+<h4><a id="q05">What is shown on the X-axis of XY-diagrams?</a></h4>
+
+Unter View/Select chose one of the followin options:<br>
+Option X-Achse<br>
+====== =======<br>
+XY vs ID ID<br>
+XY vs Set Output Set ID<br>
+XY vs Set Value Output Set Name, will be interpreted as name (e.g. for <br> Eigenfrequencies).<br>
+XY vs Position Position along one of the axis<br>
+XY vs Function Value<br>
+
+
+<h4><a id="q06">What are the different function types good for?</a></h4>
+
+Functiontypes and their usage:<br>
+Allgemein<br>
+=========<br>
+1. Dimensionless<br>
+16.Function vs. Value multiple curves associated with a given quantity<br>
+<br>
+Dynamic<br>
+=======<br>
+2. vs. Time time dependent loads for transient analysis<br>
+4. vs. Frequency frequency dependent loads for frequency response analysis.<br>
+7.Viscous Damping vs. Frequency damping for transient/frequency response analysis<br>
+8. Critical Damping vs. Frequency damping for transient/frequency response analysis<br>
+9.Amplification vs. Frequency damping for transient/frequency response analysis<br>
+17. Function vs. Critical Damping tables obtained for/from Response Spectrum analysis<br>
+<br>
+Nonlinear<br>
+========<br>
+3. vs. Temperature temperature dependent material properties<br>
+5. vs. Stress stress dependent curves for nonlinear material properties<br>
+6. Function vs. Temperature multiple stress/strain curves as a function of strain rate for nonlinear material properties<br>
+10.vs. Strain Rate yield stress as function of strain rate for nonlinear material properties<br>
+11. Function vs. Strain Rate multiple stress/strain curves as a function of strain rate for nonlinear material properties<br>
+14. Stress vs. Strain stress/strain curve for nonlinear material properties<br>
+15. Stress vs. Plastic Strain stress/strain curve for nonlinear material properties for export to those analysis codes that require input in plastic strain.<br>
+12. vs. Curve Length define load magnitude as a function of curve length.<br>
+13. vs. Parametric Length define load magnitude as a function of parametric length.<br>
+
+
+
+<h4><a id="q07">What entities are theret?</a></h4>
+
+
+<ol>
+    <li>Coordinate System</li>
+    <li>Point</li>
+    <li>Curve</li>
+    <li>Surface</li>
+    <li>Solid/Volume</li>
+    <li>Text</li>
+    <li>Boundary</li>
+    <li>Node</li>
+    <li>Element</li>
+    <li>Material</li>
+    <li>Property</li>
+    <li>Load Set</li>
+    <li>Constraint Set</li>
+    <li>View</li>
+    <li>Output Set</li>
+    <li>Output Format</li>
+</ol>
+
+
+<h4><a id="q08">How can I find out more about functions like XEL() or SIN()?</a></h4>
+
+Appendix C of the User Giude has a Function Reference.
+
+<h4><a id="q09">How can I change the background color of a window?</a></h4>
+
+<h4><a id="q10">The title bar of my window has disappeared. How can I get it back?</a></h4>
+
+Shift and right mouse button brings back the title bar.
+
+<h4><a id="q11">The small Dynamic Query windows don't disappear. How can I get rid of them?</a></h4>
+
+<pre>Delete/Tools/Text</pre>
+
+and then select all the windows you want to delete.
+See also:
+<a href="#q12">"How can I get information about a certain node or element quickly?"</a>
+
+<h4><a id="q12">How can I get information about a certain node or element quickly?</a></h4>
+
+On the right side of the status bar select the Entity you would want to show.
+Move you mouse pointer over the element you want to query and leave it there.
+A small window with selected info is shown.
+Which info is shown depends on the selected Output Set and the selected Output Vector.
+This functionality is refered as Dynamic Query in the manual.
+Other useful functions are: Dynamic Query + left mouse button copies text in the List Window
+Dynamic Query + right mouse button copies text in the Graphic Window
+To view the test, it must be in the current Group and a Redraw has to be done.
+
+
+
+
+
+
+      </div>
+    </div>
+    <div id="Footer" class="visualClear">
+      <p class="created">Created: 2006-09-17</p>
+      <p class="modified">Last Modified: 2021-03-28</p>
+      <a href="https://weinzierlweb.com/contact">Contact</a>&nbsp;&middot;&nbsp;<a href="https://weinzierlweb.com/privacy">Privacy</a>&nbsp;&middot;&nbsp;<a href="https://weinzierlweb.com/sitemap">Sitemap</a>&nbsp;&middot;&nbsp;<a href="https://secure-stats.pingdom.com/6xu4irqdlxkl">Status</a>&nbsp;&middot;&nbsp;<a href="https://weinzierlweb.com/key">PGP Key</a>&nbsp;&middot;&nbsp;<a href="https://weinzierlweb.com/now">Now</a>
+    </div>
+    <noscript>
+      <p>
+        <img src="https://s.weinzierlweb.com/m/matomo.php?idsite=1&rec=1&bots=0&action_name='femapfaq'" alt="This is just an empty image.">
+        <img src="/s.gif?nojs=y" alt="This is another empty image.">
+      </p>
+    </noscript>
+  </body>
+</html>
+
